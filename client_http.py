@@ -758,15 +758,15 @@ def afficher_aide():
     print(f"Examples:")
     print(f"  python client_http.py http://httpbin.org/get")
     print(f"  python client_http.py http://example.com/ --save page.html")
-    print(f"  python client_http.py localhost:8080/index.html")
+    print(f"  python client_http.py localhost:80/index.html")
     print(f"  python client_http.py google.com --save google.html --no-headers")
     print(f"  python client_http.py httpbin.org/redirect/3")
     print(f"  python client_http.py httpbin.org/redirect/3 --no-redirect")
     print(f"")
     print(f"Tests with local server:")
-    print(f"  python client_http.py localhost:8080")
-    print(f"  python client_http.py localhost:8080/index.html")
-    print(f"  python client_http.py 127.0.0.1:8080/nonexistent-file.html")
+    print(f"  python client_http.py localhost:80")
+    print(f"  python client_http.py localhost:80/index.html")
+    print(f"  python client_http.py 127.0.0.1:80/nonexistent-file.html")
     print(f"{'=' * 70}")
 
 
@@ -841,60 +841,5 @@ def main():
         print(f"\n[CRITICAL ERROR] {e}")
         sys.exit(1)
 
-
 if __name__ == "__main__":
     main()
-
-
-"""
-TEST EXAMPLES:
-
-1. Basic tests:
-   python client_http.py http://httpbin.org/get
-   python client_http.py http://example.com/
-   python client_http.py google.com
-
-2. Tests with file saving:
-   python client_http.py http://httpbin.org/html --save test.html
-   python client_http.py http://example.com/ --save example.html
-
-3. Tests with local server:
-   python client_http.py localhost:8080
-   python client_http.py localhost:8080/index.html
-   python client_http.py 127.0.0.1:8080/404
-
-4. Redirection tests:
-   python client_http.py httpbin.org/redirect/3
-   python client_http.py httpbin.org/redirect/5
-   python client_http.py httpbin.org/relative-redirect/2
-   python client_http.py httpbin.org/absolute-redirect/3
-   python client_http.py httpbin.org/redirect-to?url=http://example.com
-
-5. Redirection tests without following:
-   python client_http.py httpbin.org/redirect/3 --no-redirect
-   python client_http.py httpbin.org/status/302 --no-redirect
-
-6. Tests with different status codes:
-   python client_http.py httpbin.org/status/404
-   python client_http.py httpbin.org/status/500
-   python client_http.py httpbin.org/status/301
-
-7. Tests without detailed headers:
-   python client_http.py http://httpbin.org/get --no-headers
-
-8. Performance tests (with time):
-   time python client_http.py http://httpbin.org/delay/2
-
-9. Tests with complex URLs:
-   python client_http.py "httpbin.org/get?param1=value1&param2=value2"
-
-10. Complete redirection chain test:
-    python client_http.py httpbin.org/redirect/3 --save final_page.html
-
-Expected behavior with /redirect/3:
-Step 1: 302 Found [REDIRECT] - httpbin.org/redirect/3
-Step 2: 302 Found [REDIRECT] - httpbin.org/relative-redirect/2  
-Step 3: 302 Found [REDIRECT] - httpbin.org/relative-redirect/1
-Step 4: 200 OK [FINAL] - httpbin.org/get
-Total redirections followed: 3
-"""

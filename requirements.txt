@@ -1,0 +1,57 @@
+# TP HTTP Socket Python - Dépendances
+# Projet d'implémentation HTTP avec sockets Python purs
+
+# ================================================================
+# MODULES PYTHON STANDARD UTILISÉS (inclus avec Python 3.6+)
+# ================================================================
+# Les modules suivants sont utilisés dans le projet mais font
+# partie de la bibliothèque standard Python (pas besoin d'installation)
+
+# socket          - Communication réseau TCP/IP
+# sys             - Arguments de ligne de commande, exit
+# os              - Manipulation de fichiers et répertoires
+# threading       - Gestion multi-thread pour le serveur
+# time            - Fonctions temporelles
+# datetime        - Formatage des dates HTTP
+# urllib.parse    - Parsing d'URLs (urlparse, unquote)
+# re              - Expressions régulières pour parsing HTML
+# json            - Parsing JSON (aperçu contenu)
+
+# ================================================================
+# DÉPENDANCES EXTERNES (aucune requise)
+# ================================================================
+# Ce projet n'utilise VOLONTAIREMENT aucune dépendance externe
+# pour démontrer l'implémentation HTTP "from scratch"
+
+# Dépendances optionnelles pour extensions futures :
+# requests>=2.28.0      # Pour comparer avec une implémentation complète
+# beautifulsoup4>=4.11  # Pour parsing HTML avancé
+# colorama>=0.4.5       # Pour couleurs dans le terminal
+
+# ================================================================
+# VERSIONS PYTHON SUPPORTÉES
+# ================================================================
+# Python 3.6+    - Requis (f-strings utilisées)
+# Python 3.7+    - Recommandé (performance threading)
+# Python 3.8+    - Optimal (améliorer gestion asyncio pour extensions)
+
+# ================================================================
+# INSTALLATION
+# ================================================================
+# Aucune installation requise si Python 3.6+ est présent
+# Pour vérifier : python3 --version
+
+# Commandes utiles pour le développement :
+# pip freeze > requirements_dev.txt   # Sauvegarder environnement actuel
+# python -m http.server 8000          # Serveur HTTP simple pour comparaison
+# telnet localhost 8080               # Test manuel du serveur
+
+# ================================================================
+# COMPATIBILITÉ SYSTÈME
+# ================================================================
+# Windows   - Compatible (sockets TCP/IP standard)
+# Linux     - Compatible (implémentation native)  
+# macOS     - Compatible (BSD sockets)
+# BSD       - Compatible
+# Android   - Compatible avec Termux/Python
+# Raspberry - Compatible
